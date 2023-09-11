@@ -60,3 +60,8 @@ func setupRoutes() {
 }
 
 
+func main() {
+  fmt.Println("Hello World")
+  setupRoutes()
+  log.Fatal(http.ListenAndServe(":8080", nil))
+}
