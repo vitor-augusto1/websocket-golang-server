@@ -54,3 +54,9 @@ func reader(conn *websocket.Conn) {
 }
 
 
+func setupRoutes() {
+  http.HandleFunc("/", homePage)
+  http.HandleFunc("/ws", wsEndpoint)
+}
+
+
