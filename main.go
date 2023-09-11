@@ -33,6 +33,10 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
   if err != nil {
     log.Println(err)
   }
+  reader(conn)
+}
+
+
 func reader(conn *websocket.Conn) {
   for {
     messageType, p, err := conn.ReadMessage()
