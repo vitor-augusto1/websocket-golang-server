@@ -1,1 +1,1 @@
-# websocket-golang-server
+# Websocket Golang Server
