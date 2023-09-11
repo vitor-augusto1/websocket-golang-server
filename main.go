@@ -15,3 +15,8 @@ var upgrader = websocket.Upgrader {
 }
 
 
+func homePage(w http.ResponseWriter, r *http.Request) {
+  fmt.Fprintf(w, "Home Page")
+}
+
+
