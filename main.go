@@ -20,3 +20,7 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 
+func wsEndpoint(w http.ResponseWriter, r *http.Request) {
+  // Checking the origin
+  upgrader.CheckOrigin = func(r *http.Request) bool { return true }
+}
