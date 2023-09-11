@@ -29,4 +29,8 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
     log.Println(err)
   }
   log.Println("Client connected")
+  err = conn.WriteMessage(1, []byte("Hi client!"))
+  if err != nil {
+    log.Println(err)
+  }
 }
