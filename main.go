@@ -33,4 +33,20 @@ func wsEndpoint(w http.ResponseWriter, r *http.Request) {
   if err != nil {
     log.Println(err)
   }
+func reader(conn *websocket.Conn) {
+  for {
+    messageType, p, err := conn.ReadMessage()
+    if err != nil {
+      log.Println(err)
+      return
+    }
+    // Printing the message
+    fmt.Println(string(p))
+    if err := conn.WriteMessage(messageType, p); err != nil {
+      log.Println(err)
+      return
+    }
+  }
 }
+
+
