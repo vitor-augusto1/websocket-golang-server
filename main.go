@@ -23,4 +23,10 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func wsEndpoint(w http.ResponseWriter, r *http.Request) {
   // Checking the origin
   upgrader.CheckOrigin = func(r *http.Request) bool { return true }
+  // Upgrading the http connection
+  conn, err := upgrader.Upgrade(w, r, nil)
+  if err != nil {
+    log.Println(err)
+  }
+  log.Println("Client connected")
 }
